@@ -65,13 +65,7 @@ Projekt spełnia wszystkie postawione wymagania rekrutacyjne:
 ### Instrukcja
 
 1.  Sklonuj repozytorium.
-2.  Wyeksportuj klucz API OpenAI jako zmienną środowiskową (lub sformatuj plik `.env` / `docker-compose.override.yml`, ale najprościej zmienną w shellu):
-
-    ```bash
-    export OPENAI_API_KEY="sk-..."
-    ```
-
-    Alternatywnie edytuj `src/WebUI/appsettings.json` lub przekaż w `docker-compose.yml`.
+2.  Dodaj klucz OPENAI w pliku docker-compose.yml.
     **Uwaga:** Jeśli nie podasz klucza, aplikacja uruchomi się z **MockAiChatService** (symulacja odpowiedzi).
 
 3.  Uruchom aplikację poleceniem:
@@ -80,7 +74,7 @@ Projekt spełnia wszystkie postawione wymagania rekrutacyjne:
     docker compose up
     ```
 
-    *System automatycznie zbuduje obrazy, uruchomi bazę MySQL, utworzy schemat bazy i załaduje przykładowe dane (katalog produktów).*
+    *System automatycznie zbuduje obrazy, uruchomi bazę MySQL, utworzy schemat bazy i załaduje przykładowe dane (katalog produktów), w przypadku race condition docker sam spróbuje ponownie uruchomić aplikację do skutku.*
 
 4.  Otwórz przeglądarkę pod adresem:
     **[http://localhost:5000](http://localhost:5000)**
