@@ -1,0 +1,128 @@
+@page "/"
+@using Application.Interfaces
+@inject IAiChatService ChatService
+@rendermode InteractiveServer
+
+<PageTitle>PetWorld Chat</PageTitle>
+
+<div class="chat-container">
+    <h1>PetWorld - Asystent Sklepu Zoologicznego</h1>
+
+    <div class="chat-messages" @ref="messagesContainer">
+        @if (messages.Count == 0)
+        {
+            <div class="welcome-message">
+                <p>Witaj w PetWorld! Jestem Twoim asystentem.</p>
+                <p>Zapytaj mnie o produkty dla Twojego pupila.</p>
+            </div>
+        }
+        @foreach (var message in messages)
+        {
+            <div class="message @(message.IsUser ? "user-message" : "assistant-message")">
+                <div class="message-content">
+                    @message.Content
+                </div>
+                @if (!message.IsUser && message.Iterations > 0)
+                {
+                    <div class="message-meta">
+                        <span class="iterations-badge" title="Liczba iteracji Writer-Critic">
+                            Iteracje: @message.Iterations
+                        </span>
+                        @if (message.IsApproved)
+                        {
+                            <span class="approved-badge">Zatwierdzone</span>
+                        }
+                        else
+                        {
+                            <span class="not-approved-badge">Niezatwierdzone</span>
+                        }
+                    </div>
+                }
+            </div>
+        }
+        @if (isLoading)
+        {
+            <div class="message assistant-message loading">
+                <div class="typing-indicator">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="chat-input-container">
+        <form @onsubmit="SendMessage" class="chat-form">
+            <input type="text"
+                   @bind="currentMessage"
+                   @bind:event="oninput"
+                   placeholder="Napisz wiadomość..."
+                   disabled="@isLoading"
+                   class="chat-input" />
+            <button type="submit" disabled="@(isLoading || string.IsNullOrWhiteSpace(currentMessage))" class="send-button">
+                @if (isLoading)
+                {
+                    <span>Wysyłanie...</span>
+                }
+                else
+                {
+                    <span>Wyślij</span>
+                }
+            </button>
+        </form>
+    </div>
+</div>
+
+@code {
+    private List<ChatMessage> messages = new();
+    private string currentMessage = string.Empty;
+    private bool isLoading = false;
+    private ElementReference messagesContainer;
+
+    private async Task SendMessage()
+    {
+        if (string.IsNullOrWhiteSpace(currentMessage) || isLoading)
+            return;
+
+        var userMessage = currentMessage;
+        currentMessage = string.Empty;
+
+        messages.Add(new ChatMessage { Content = userMessage, IsUser = true });
+        isLoading = true;
+        StateHasChanged();
+
+        try
+        {
+            var result = await ChatService.ProcessQuestionAsync(userMessage);
+            messages.Add(new ChatMessage
+            {
+                Content = result.Response,
+                IsUser = false,
+                Iterations = result.Iterations,
+                IsApproved = result.IsApproved
+            });
+        }
+        catch (Exception ex)
+        {
+            messages.Add(new ChatMessage
+            {
+                Content = $"Przepraszam, wystąpił błąd: {ex.Message}",
+                IsUser = false
+            });
+        }
+        finally
+        {
+            isLoading = false;
+            StateHasChanged();
+        }
+    }
+
+    private class ChatMessage
+    {
+        public string Content { get; set; } = string.Empty;
+        public bool IsUser { get; set; }
+        public int Iterations { get; set; }
+        public bool IsApproved { get; set; }
+    }
+}

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "iu5hUhSQ5BBGB8NfQKK+wPJu19Ra3bwMZrr1nBh8a7LlT2KdHwbca0YeSFn3c9DTpPn+flxeiTu8GWAGCNWQoA==",
+  "success": true,
+  "projectFilePath": "/home/mrwhiteeagle/Documents/ZadRekrutacyjne/src/Application/Application.csproj",
+  "expectedPackageFiles": [
+    "/home/mrwhiteeagle/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.22/microsoft.aspnetcore.app.ref.8.0.22.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,220 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/mrwhiteeagle/Documents/ZadRekrutacyjne/src/Infrastructure/Infrastructure.csproj": {}
+  },
+  "projects": {
+    "/home/mrwhiteeagle/Documents/ZadRekrutacyjne/src/Application/Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/mrwhiteeagle/Documents/ZadRekrutacyjne/src/Application/Application.csproj",
+        "projectName": "Application",
+        "projectPath": "/home/mrwhiteeagle/Documents/ZadRekrutacyjne/src/Application/Application.csproj",
+        "packagesPath": "/home/mrwhiteeagle/.nuget/packages/",
+        "outputPath": "/home/mrwhiteeagle/Documents/ZadRekrutacyjne/src/Application/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/mrwhiteeagle/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/mrwhiteeagle/Documents/ZadRekrutacyjne/src/Domain/Domain.csproj": {
+                "projectPath": "/home/mrwhiteeagle/Documents/ZadRekrutacyjne/src/Domain/Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.22, 8.0.22]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.122/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/mrwhiteeagle/Documents/ZadRekrutacyjne/src/Domain/Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/mrwhiteeagle/Documents/ZadRekrutacyjne/src/Domain/Domain.csproj",
+        "projectName": "Domain",
+        "projectPath": "/home/mrwhiteeagle/Documents/ZadRekrutacyjne/src/Domain/Domain.csproj",
+        "packagesPath": "/home/mrwhiteeagle/.nuget/packages/",
+        "outputPath": "/home/mrwhiteeagle/Documents/ZadRekrutacyjne/src/Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/mrwhiteeagle/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.22, 8.0.22]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.122/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/mrwhiteeagle/Documents/ZadRekrutacyjne/src/Infrastructure/Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/mrwhiteeagle/Documents/ZadRekrutacyjne/src/Infrastructure/Infrastructure.csproj",
+        "projectName": "Infrastructure",
+        "projectPath": "/home/mrwhiteeagle/Documents/ZadRekrutacyjne/src/Infrastructure/Infrastructure.csproj",
+        "packagesPath": "/home/mrwhiteeagle/.nuget/packages/",
+        "outputPath": "/home/mrwhiteeagle/Documents/ZadRekrutacyjne/src/Infrastructure/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/mrwhiteeagle/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/mrwhiteeagle/Documents/ZadRekrutacyjne/src/Application/Application.csproj": {
+                "projectPath": "/home/mrwhiteeagle/Documents/ZadRekrutacyjne/src/Application/Application.csproj"
+              },
+              "/home/mrwhiteeagle/Documents/ZadRekrutacyjne/src/Domain/Domain.csproj": {
+                "projectPath": "/home/mrwhiteeagle/Documents/ZadRekrutacyjne/src/Domain/Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.AI": {
+              "target": "Package",
+              "version": "[9.1.0-preview.1.25064.3, )"
+            },
+            "Microsoft.Extensions.AI.Abstractions": {
+              "target": "Package",
+              "version": "[9.1.0-preview.1.25064.3, )"
+            },
+            "Microsoft.Extensions.AI.OpenAI": {
+              "target": "Package",
+              "version": "[9.1.0-preview.1.25064.3, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.22, 8.0.22]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.122/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

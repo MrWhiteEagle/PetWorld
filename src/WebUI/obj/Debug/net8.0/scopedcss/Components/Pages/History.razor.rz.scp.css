@@ -1,0 +1,220 @@
+.history-container[b-vuzp7yy1q9] {
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.history-container h1[b-vuzp7yy1q9] {
+    color: #052767;
+    margin-bottom: 1.5rem;
+}
+
+.grid-container[b-vuzp7yy1q9] {
+    background: white;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+[b-vuzp7yy1q9] .history-grid {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+[b-vuzp7yy1q9] .history-grid th {
+    background: #f8f9fa;
+    padding: 0.75rem;
+    text-align: left;
+    font-weight: 600;
+    color: #495057;
+    border-bottom: 2px solid #dee2e6;
+}
+
+[b-vuzp7yy1q9] .history-grid td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #e9ecef;
+    vertical-align: middle;
+}
+
+[b-vuzp7yy1q9] .history-grid tr:hover td {
+    background: #f8f9fa;
+}
+
+.text-cell[b-vuzp7yy1q9] {
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.status-badge[b-vuzp7yy1q9] {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.status-badge.approved[b-vuzp7yy1q9] {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status-badge.not-approved[b-vuzp7yy1q9] {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.details-button[b-vuzp7yy1q9] {
+    padding: 0.25rem 0.75rem;
+    background: #1b6ec2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: background 0.2s;
+}
+
+.details-button:hover[b-vuzp7yy1q9] {
+    background: #1861ac;
+}
+
+[b-vuzp7yy1q9] .pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e9ecef;
+}
+
+[b-vuzp7yy1q9] .pagination button {
+    padding: 0.5rem 1rem;
+    border: 1px solid #dee2e6;
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+[b-vuzp7yy1q9] .pagination button:hover:not(:disabled) {
+    background: #f8f9fa;
+    border-color: #1b6ec2;
+}
+
+[b-vuzp7yy1q9] .pagination button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.modal-overlay[b-vuzp7yy1q9] {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn-b-vuzp7yy1q9 0.2s ease;
+}
+
+@keyframes fadeIn-b-vuzp7yy1q9 {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-content[b-vuzp7yy1q9] {
+    background: white;
+    border-radius: 12px;
+    max-width: 700px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    animation: slideIn-b-vuzp7yy1q9 0.3s ease;
+}
+
+@keyframes slideIn-b-vuzp7yy1q9 {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-header[b-vuzp7yy1q9] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #e9ecef;
+    background: #f8f9fa;
+    border-radius: 12px 12px 0 0;
+}
+
+.modal-header h2[b-vuzp7yy1q9] {
+    margin: 0;
+    font-size: 1.25rem;
+    color: #052767;
+}
+
+.close-button[b-vuzp7yy1q9] {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #6c757d;
+    line-height: 1;
+    padding: 0.25rem 0.5rem;
+    transition: color 0.2s;
+}
+
+.close-button:hover[b-vuzp7yy1q9] {
+    color: #dc3545;
+}
+
+.modal-body[b-vuzp7yy1q9] {
+    padding: 1.5rem;
+}
+
+.detail-section[b-vuzp7yy1q9] {
+    margin-bottom: 1.5rem;
+}
+
+.detail-section:last-child[b-vuzp7yy1q9] {
+    margin-bottom: 0;
+}
+
+.detail-section h3[b-vuzp7yy1q9] {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    color: #6c757d;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+.detail-section p[b-vuzp7yy1q9] {
+    margin: 0;
+    color: #212529;
+}
+
+.detail-text[b-vuzp7yy1q9] {
+    white-space: pre-wrap;
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    max-height: 200px;
+    overflow-y: auto;
+    line-height: 1.6;
+}

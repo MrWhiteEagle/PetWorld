@@ -1,0 +1,118 @@
+@page "/history"
+@using Domain.Entities
+@using Infrastructure.Data
+@using Microsoft.AspNetCore.Components.QuickGrid
+@using Microsoft.EntityFrameworkCore
+@inject ApplicationDbContext DbContext
+@rendermode InteractiveServer
+
+<PageTitle>Historia Rozmów</PageTitle>
+
+<div class="history-container">
+    <h1>Historia Rozmów</h1>
+
+    <div class="grid-container">
+        <QuickGrid Items="@chatEntries" Pagination="@pagination" Class="history-grid">
+            <PropertyColumn Property="@(e => e.Id)" Title="ID" Sortable="true" />
+            <PropertyColumn Property="@(e => e.CreatedAt)" Title="Data" Format="dd.MM.yyyy HH:mm" Sortable="true" />
+            <TemplateColumn Title="Pytanie">
+                <div class="text-cell" title="@context.UserPrompt">
+                    @TruncateText(context.UserPrompt, 50)
+                </div>
+            </TemplateColumn>
+            <TemplateColumn Title="Odpowiedź">
+                <div class="text-cell" title="@context.Response">
+                    @TruncateText(context.Response, 80)
+                </div>
+            </TemplateColumn>
+            <PropertyColumn Property="@(e => e.IterationCount)" Title="Iteracje" Sortable="true" />
+            <TemplateColumn Title="Status">
+                @if (context.IsApprovedByCritic)
+                {
+                    <span class="status-badge approved">Zatwierdzone</span>
+                }
+                else
+                {
+                    <span class="status-badge not-approved">Niezatwierdzone</span>
+                }
+            </TemplateColumn>
+            <TemplateColumn Title="Szczegóły">
+                <button class="details-button" @onclick="() => ShowDetails(context)">
+                    Pokaż
+                </button>
+            </TemplateColumn>
+        </QuickGrid>
+
+        <Paginator State="@pagination" />
+    </div>
+
+    @if (selectedEntry != null)
+    {
+        <div class="modal-overlay" @onclick="CloseDetails">
+            <div class="modal-content" @onclick:stopPropagation="true">
+                <div class="modal-header">
+                    <h2>Szczegóły Rozmowy #@selectedEntry.Id</h2>
+                    <button class="close-button" @onclick="CloseDetails">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="detail-section">
+                        <h3>Data</h3>
+                        <p>@selectedEntry.CreatedAt.ToString("dd.MM.yyyy HH:mm:ss")</p>
+                    </div>
+                    <div class="detail-section">
+                        <h3>Pytanie użytkownika</h3>
+                        <p class="detail-text">@selectedEntry.UserPrompt</p>
+                    </div>
+                    <div class="detail-section">
+                        <h3>Odpowiedź asystenta</h3>
+                        <p class="detail-text">@selectedEntry.Response</p>
+                    </div>
+                    <div class="detail-section">
+                        <h3>Statystyki</h3>
+                        <p>
+                            <strong>Liczba iteracji:</strong> @selectedEntry.IterationCount<br />
+                            <strong>Status:</strong>
+                            @if (selectedEntry.IsApprovedByCritic)
+                            {
+                                <span class="status-badge approved">Zatwierdzone przez krytyka</span>
+                            }
+                            else
+                            {
+                                <span class="status-badge not-approved">Niezatwierdzone przez krytyka</span>
+                            }
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@code {
+    private IQueryable<ChatEntry> chatEntries = default!;
+    private PaginationState pagination = new() { ItemsPerPage = 10 };
+    private ChatEntry? selectedEntry;
+
+    protected override void OnInitialized()
+    {
+        chatEntries = DbContext.ChatEntries.OrderByDescending(e => e.CreatedAt);
+    }
+
+    private static string TruncateText(string text, int maxLength)
+    {
+        if (string.IsNullOrEmpty(text))
+            return string.Empty;
+
+        return text.Length <= maxLength ? text : text[..maxLength] + "...";
+    }
+
+    private void ShowDetails(ChatEntry entry)
+    {
+        selectedEntry = entry;
+    }
+
+    private void CloseDetails()
+    {
+        selectedEntry = null;
+    }
+}

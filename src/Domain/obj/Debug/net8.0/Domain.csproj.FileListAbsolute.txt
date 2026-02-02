@@ -1,0 +1,11 @@
+/home/mrwhiteeagle/Documents/ZadRekrutacyjne/src/Domain/bin/Debug/net8.0/Domain.deps.json
+/home/mrwhiteeagle/Documents/ZadRekrutacyjne/src/Domain/bin/Debug/net8.0/Domain.dll
+/home/mrwhiteeagle/Documents/ZadRekrutacyjne/src/Domain/bin/Debug/net8.0/Domain.pdb
+/home/mrwhiteeagle/Documents/ZadRekrutacyjne/src/Domain/obj/Debug/net8.0/Domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/mrwhiteeagle/Documents/ZadRekrutacyjne/src/Domain/obj/Debug/net8.0/Domain.AssemblyInfoInputs.cache
+/home/mrwhiteeagle/Documents/ZadRekrutacyjne/src/Domain/obj/Debug/net8.0/Domain.AssemblyInfo.cs
+/home/mrwhiteeagle/Documents/ZadRekrutacyjne/src/Domain/obj/Debug/net8.0/Domain.csproj.CoreCompileInputs.cache
+/home/mrwhiteeagle/Documents/ZadRekrutacyjne/src/Domain/obj/Debug/net8.0/Domain.dll
+/home/mrwhiteeagle/Documents/ZadRekrutacyjne/src/Domain/obj/Debug/net8.0/refint/Domain.dll
+/home/mrwhiteeagle/Documents/ZadRekrutacyjne/src/Domain/obj/Debug/net8.0/Domain.pdb
+/home/mrwhiteeagle/Documents/ZadRekrutacyjne/src/Domain/obj/Debug/net8.0/ref/Domain.dll
